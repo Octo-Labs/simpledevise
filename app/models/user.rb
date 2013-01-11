@@ -1,7 +1,4 @@
 class User < AWS::Record::Model
-
-  
-
   # Setup the attributes for the model
   # Many of these are managed by Devise
 
@@ -43,9 +40,14 @@ class User < AWS::Record::Model
   # Include some validation funcitons needed by Devise
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
-  require 'active_record/errors'
-  require 'active_record/validations'
-  extend ActiveRecord::Validations::ClassMethods
+
+  # Some methods to fake out Devise
+  def self.validates_uniqueness_of(arg1,arg2)
+  end
+
+  def save(*args)
+    super()
+  end
 
   # Now include devise model methods and 'configure' devise for this model
   extend Devise::Models
@@ -56,4 +58,5 @@ class User < AWS::Record::Model
   devise :database_authenticatable, :registerable,
          :trackable, :validatable
 
+  
 end
