@@ -38,6 +38,7 @@ class User < AWS::Record::Model
 
 
   # Include some validation funcitons needed by Devise
+  include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
 
   # Some methods to fake out Devise
