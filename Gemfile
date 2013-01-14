@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem "aws-sdk", "~> 1.8.0"
 gem "devise", "~> 2.2.0"
 gem "orm_adapter_aws", "~> 0.0.1"
+gem "simple_unique", "~> 0.0.2"
 
 
 # Gems used only for assets and not required
@@ -23,6 +24,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

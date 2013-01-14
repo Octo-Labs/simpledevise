@@ -38,13 +38,9 @@ class User < AWS::Record::Model
 
 
   # Include some validation funcitons needed by Devise
-  include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
 
   # Some methods to fake out Devise
-  def self.validates_uniqueness_of(arg1,arg2)
-  end
-
   def save(*args)
     super()
   end
