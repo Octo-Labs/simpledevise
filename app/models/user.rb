@@ -40,25 +40,6 @@ class User < AWS::Record::Model
   # Include some validation funcitons needed by Devise
   include ActiveModel::Validations::Callbacks
 
-  # Some methods to fake out Devise
-  def save opts = {}
-    if valid?(opts)
-      persisted? ? update : create
-      clear_changes!
-      true
-    else
-      false
-    end
-  end
-
-  def valid? opts = {}
-    opts = {} if opts.nil?
-    opts = {:validate => true}.merge(opts)
-    run_validations if opts[:validate]
-    errors.empty?
-  end
-
-
   # Now include devise model methods and 'configure' devise for this model
   extend Devise::Models
   # Include default devise modules. Others available are:

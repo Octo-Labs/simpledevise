@@ -5,10 +5,11 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #
-gem "aws-sdk", "~> 1.8.0"
+gem "aws-sdk", :git => "git://github.com/aws/aws-sdk-ruby.git"
 gem "devise", "~> 2.2.0"
 gem "orm_adapter_aws", "~> 0.0.1"
-gem "simple_unique", "~> 0.0.2"
+gem "simple_unique", "~> 0.0.3"
+gem "simple_date_fix", "~> 0.0.4"
 
 
 # Gems used only for assets and not required
